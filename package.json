@@ -1,0 +1,32 @@
+{
+  "name": "expense-manager",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Expense Manager",
+  "cordovaId": "org.cordova.quasar.app",
+  "author": "Dom Fernandez <domfernandez082186@gmail.com>",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "apexcharts": "^3.8.3",
+    "axios": "^0.18.1",
+    "quasar": "^1.0.0",
+    "vee-validate": "^2.2.13",
+    "vue-i18n": "^8.0.0",
+    "vuex-persistedstate": "^2.5.4"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}
