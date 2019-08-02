@@ -26,14 +26,14 @@ Route::middleware( 'auth:api' )->group( function() {
         Route::post( 'logout', 'API\UsersController@logout' );
     });
 
-    Route::prefix( 'roles' )->group( function() {
+    Route::prefix( 'expenses' )->group( function() {
         Route::get( 'lists', 'API\RolesController@list' );
         Route::post( 'add', 'API\RolesController@add' );
         Route::post( 'update', 'API\RolesController@update' );
         Route::post( 'delete', 'API\RolesController@delete' );
     });
 
-    Route::prefix( 'expenses' )->group( function() {
+    Route::prefix( 'roles' )->group( function() {
         Route::prefix( 'categories' )->group( function() {
             Route::get( 'lists', 'API\ExpenseCategoriesController@list' );
             Route::post( 'add', 'API\ExpenseCategoriesController@add' );
@@ -42,7 +42,7 @@ Route::middleware( 'auth:api' )->group( function() {
         });
 
         Route::get( 'lists', 'API\ExpensesController@list' );
-        Route::post( 'add', 'API\ExpensesController@add' );
+        Route::post( 'add', 'API\ExpenseCategoriesController@add' );
         Route::post( 'update', 'API\ExpensesController@update' );
         Route::post( 'delete', 'API\ExpensesController@delete' );
         Route::get( 'total', 'API\ExpensesController@total' );

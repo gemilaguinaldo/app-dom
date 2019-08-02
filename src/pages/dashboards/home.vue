@@ -45,7 +45,7 @@
                     url: 'expenses/total'
                 })
                 .then( response => {
-                    this.expenses = response.data.expenses
+                    this.expenses = response.expenses
                     this.show_loader = false
                 })
                 .catch( error => {

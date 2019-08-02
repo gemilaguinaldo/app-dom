@@ -85,15 +85,12 @@
                             }
                         })
                         .then( response => {
-                            this.$q.notify({
+                            this.$expense_manager.notify({
                                 message: response.data.message,
                                 position: 'top',
                                 color: 'positive',
                                 icon: 'mdi-check'
                             })
-                            this.change_password_submitting = false
-                        })
-                        .catch( error => {
                             this.change_password_submitting = false
                         })
                     } else {

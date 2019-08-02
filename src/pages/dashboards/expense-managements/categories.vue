@@ -17,7 +17,7 @@
                         color="primary"
                         no-caps
                         unelevated
-                        @click.prevent="dialog_add_category = true"
+                        @click.prevent="dialog_add_category"
                     />
                 </div>
             </div>
@@ -288,11 +288,12 @@
                     console.log( error )
                 })
             },
+
             addCategory() {
                 this.add_category_submitting = true
                 this.errors.clear()
 
-                axios.defaults.headers.common['Authorization'] = 'Bearer ' + store.state.tokens.token
+                axios.defaults.headers.common['Authorization'] = 'Bearer ' + store.state.token
 
                 this.$validator.validateAll().then(( result ) => {
                     if ( result ) {
@@ -408,13 +409,15 @@
                     this.delete_category_submitting = false
                 })
             },
-            showDialogUpdateCategory( id, name, description ) {
+
+            showDialogUpdateCategory( name,  id, description ) {
                 this.update_category_id = id
                 this.delete_category_id = id
                 this.update_category_name = name
                 this.update_category_description = description
                 this.dialog_update_category = true
             },
+
             hideDialogAddCategory() {
                 this.add_category_name = ''
                 this.add_category_description = ''

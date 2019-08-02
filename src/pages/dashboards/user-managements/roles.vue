@@ -54,7 +54,7 @@
                             <q-input
                                 type="text"
                                 name="add_role_name"
-                                v-model="add_role_name"
+                                :value="add_role_name"
                                 class="q-pb-none"
                                 filled
                                 dense
@@ -73,7 +73,7 @@
                             <div class="q-mb-xs">Description</div>
                             <q-input
                                 name="add_role_description"
-                                v-model="add_role_description"
+                                :value="add_role_description"
                                 class="q-pb-none"
                                 filled
                                 dense

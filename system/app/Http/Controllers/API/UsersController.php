@@ -32,9 +32,7 @@ class UsersController extends Controller {
     }
 
     public function logout() {
-        auth()->user()->tokens->each( function( $token, $key ) {
-            $token->delete();
-        });
+        auth()->user()->token()->delete();
 
         return response([
             'message'   => 'Logged out successfully.'
@@ -82,7 +80,7 @@ class UsersController extends Controller {
                         'role'              => $request->role,
                         'password'          => bcrypt( 'password' )
                     ]);
-        
+
                     if ( $insert_user ) {
                         return response([
                             'message'   => 'User has been added.'
@@ -112,7 +110,7 @@ class UsersController extends Controller {
                 $_user->email_address   = $request->email_address;
                 $_user->role            = $request->role;
                 $update_user            = $_user->save();
-    
+
                 if ( $update_user ) {
                     return response([
                         'message'   => 'User has been updated.'
@@ -167,7 +165,7 @@ class UsersController extends Controller {
     public function change_password( Request $request ) {
         $user = Auth::user();
 
-        if ( $request->all() ) {
+        if ( !$request->all() ) {
             $_user              = User::find( $user->id );
             $_user->password    = bcrypt( $request->password );
             $update_user        = $_user->save();

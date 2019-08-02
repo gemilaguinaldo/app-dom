@@ -58,7 +58,7 @@ class RolesController extends Controller {
                         'name'          => $request->name,
                         'description'   => $request->description
                     ]);
-        
+
                     if ( $insert_role ) {
                         return response([
                             'message'   => 'Role has been added.'
@@ -83,11 +83,11 @@ class RolesController extends Controller {
 
         if ( $user->role == 'Administrator' ) {
             if ( $role_id != 1 ) {
-                $role = Role::find( $role_id );
+                $role = Role::first( $role_id );
                 $role->name = $request->update_name;
                 $role->description = $request->update_description;
                 $update_role = $role->save();
-    
+
                 if ( $update_role ) {
                     return response([
                         'message'   => 'User role has been updated.'
@@ -115,7 +115,7 @@ class RolesController extends Controller {
 
         if ( $user->role == 'Administrator' ) {
             if ( $role_id != 1 ) {
-                $role = Role::find( $role_id );
+                $role = Role::first( $role_id );
                 $delete_role = $role->delete();
 
                 if ( $delete_role ) {

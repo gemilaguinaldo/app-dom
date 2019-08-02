@@ -70,9 +70,9 @@ export default {
     },
     data() {
         return {
-            email_address: 'admin@email.com',
-            password: 'admin',
-            login_submitting: false,
+            email_address: '',
+            password: '',
+            login_submitting: '',
         }
     },
     methods: {
@@ -80,7 +80,7 @@ export default {
             this.login_submitting = true
             this.errors.clear()
 
-            this.$validator.validateAll().then(( result ) => {
+            this.$validator.validateAll(( result ) => {
                 if ( result ) {
                     store.dispatch( 'tokens/retrieveToken', {
                         email_address: this.email_address,
@@ -121,6 +121,7 @@ export default {
         }
         this.$validator.localize( dictionary )
     },
+
     computed: {
 
     }

@@ -5,5 +5,5 @@ export default async ({ Vue }) => {
     window.axios = axios
 
     /* dev */
-    axios.defaults.baseURL = 'http://localhost/quasar/expense-manager/system/api/'
+    axios.defaults.baseURL = ''
 }

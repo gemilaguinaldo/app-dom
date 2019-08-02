@@ -21,10 +21,10 @@
                     <div class="sub-navigation">
                         <template v-if="user_role == 'Administrator'">
                             <div class="sub-item">
-                                <router-link to="/dashboard/user-management/roles" exact>Roles</router-link>
+                                <router-link exact>Roles</router-link>
                             </div>
                             <div class="sub-item">
-                                <router-link to="/dashboard/user-management/users" exact>Users</router-link>
+                                <router-link exact>Users</router-link>
                             </div>
                         </template>
                         <div class="sub-item">
@@ -64,7 +64,6 @@
                             dense
                             flat
                             :ripple="false"
-                            @click.prevent="logout()"
                         />
                     </div>
                 </div>

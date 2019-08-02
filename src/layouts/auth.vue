@@ -3,11 +3,11 @@
         <q-page-container>
             <router-view :key="this.$route.name" />
         </q-page-container>
-    </q-layout>    
+    </q-layout>
 </template>
 <script>
     export default {
-        
+
     }
 </script>
 <style lang="stylus" scoped>

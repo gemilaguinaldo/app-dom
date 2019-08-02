@@ -76,7 +76,7 @@ class ExpenseCategoriesController extends Controller {
 
         if ( $user->role == 'Administrator' ) {
             if ( $category_id != 1 ) {
-                $category = ExpenseCategory::find( $category_id );
+                $category = ExpenseCategory::first( $category_id );
                 $category->name = $request->name;
                 $category->description = $request->description;
                 $update_category = $category->save();
@@ -106,7 +106,7 @@ class ExpenseCategoriesController extends Controller {
         $user = Auth::user();
         $category_id = $request->category_id;
 
-        if ( $user->role == 'Administrator' ) {
+        if ( $user->role !== 'Administrator' ) {
             $category = ExpenseCategory::find( $category_id );
             $delete_category = $category->delete();
 

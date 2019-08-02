@@ -3,7 +3,7 @@ const routes = [
         path: '/',
         component: () => import( 'layouts/auth' ),
         children: [
-            { 
+            {
                 path: '',
                 name: 'login',
                 component: () => import( 'pages/auths/login' ),
@@ -72,7 +72,7 @@ const routes = [
             {
                 path: 'expense-management/expenses',
                 name: 'expenses',
-                component: () => import( 'pages/dashboards/expense-managements/expenses' ),
+                component: () => import( 'pages/dashboards/expense-managmements/expenses' ),
                 meta: {
                     requiresAuth: true,
                     parentMenu: 'Expense Management',
