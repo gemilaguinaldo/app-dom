@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Input;
 
 class ExpenseCategoriesController extends Controller {
     public function list() {
-        $user = Auth::user();
         $categories = ExpenseCategory::query();
 
         if ( $_GET['dropdown_list'] != 'true' ) {
@@ -52,7 +51,7 @@ class ExpenseCategoriesController extends Controller {
                         'name'          => $request->name,
                         'description'   => $request->description
                     ]);
-        
+
                     if ( $insert_category ) {
                         return response([
                             'message'   => 'Category has been added.'
@@ -81,7 +80,7 @@ class ExpenseCategoriesController extends Controller {
                 $category->name = $request->name;
                 $category->description = $request->description;
                 $update_category = $category->save();
-    
+
                 if ( $update_category ) {
                     return response([
                         'message'   => 'Category has been updated.'
